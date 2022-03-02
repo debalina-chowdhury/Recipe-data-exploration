@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 1200px;
+            height: 800px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": 0, "label": "salt", "shape": "dot"}, {"id": 1, "label": "butter", "shape": "dot"}, {"id": 2, "label": "sugar", "shape": "dot"}, {"id": 3, "label": "onion", "shape": "dot"}, {"id": 4, "label": "water", "shape": "dot"}, {"id": 5, "label": "eggs", "shape": "dot"}, {"id": 6, "label": "olive oil", "shape": "dot"}, {"id": 7, "label": "flour", "shape": "dot"}, {"id": 8, "label": "milk", "shape": "dot"}, {"id": 9, "label": "garlic cloves", "shape": "dot"}, {"id": 10, "label": "pepper", "shape": "dot"}, {"id": 11, "label": "brown sugar", "shape": "dot"}, {"id": 12, "label": "garlic", "shape": "dot"}, {"id": 13, "label": "all-purpose flour", "shape": "dot"}, {"id": 14, "label": "baking powder", "shape": "dot"}, {"id": 15, "label": "egg", "shape": "dot"}, {"id": 16, "label": "salt and pepper", "shape": "dot"}, {"id": 17, "label": "parmesan cheese", "shape": "dot"}, {"id": 19, "label": "baking soda", "shape": "dot"}, {"id": 20, "label": "vegetable oil", "shape": "dot"}, {"id": 21, "label": "vanilla", "shape": "dot"}, {"id": 22, "label": "black pepper", "shape": "dot"}, {"id": 23, "label": "cinnamon", "shape": "dot"}, {"id": 27, "label": "vanilla extract", "shape": "dot"}, {"id": 30, "label": "onions", "shape": "dot"}, {"id": 33, "label": "celery", "shape": "dot"}]);
+        edges = new vis.DataSet([{"from": 0, "to": 10, "width": 9.69818391935025}, {"from": 2, "to": 0, "width": 9.681093720112464}, {"from": 1, "to": 0, "width": 9.642057851228413}, {"from": 3, "to": 0, "width": 9.48978863950086}, {"from": 7, "to": 0, "width": 9.468078568054892}, {"from": 14, "to": 0, "width": 9.28489110324048}, {"from": 5, "to": 0, "width": 9.24048152888817}, {"from": 13, "to": 0, "width": 9.235910648087712}, {"from": 1, "to": 5, "width": 9.152075463844207}, {"from": 6, "to": 0, "width": 9.14782646658694}, {"from": 4, "to": 0, "width": 9.12172771361958}, {"from": 2, "to": 5, "width": 9.10364563330522}, {"from": 1, "to": 7, "width": 9.022201929860664}, {"from": 9, "to": 0, "width": 9.016391478941248}, {"from": 19, "to": 0, "width": 9.015541293671115}, {"from": 1, "to": 2, "width": 8.955060950631902}, {"from": 1, "to": 8, "width": 8.90734159541251}, {"from": 0, "to": 8, "width": 8.861917004235215}, {"from": 3, "to": 9, "width": 8.852521917335372}, {"from": 2, "to": 21, "width": 8.835210463664092}, {"from": 7, "to": 14, "width": 8.829665432675236}, {"from": 2, "to": 14, "width": 8.785998208098329}, {"from": 3, "to": 10, "width": 8.778325928634482}, {"from": 6, "to": 9, "width": 8.760609847570002}, {"from": 0, "to": 22, "width": 8.753055515138222}, {"from": 13, "to": 14, "width": 8.720950028930258}, {"from": 2, "to": 7, "width": 8.696677393390031}, {"from": 1, "to": 21, "width": 8.68270762989381}, {"from": 5, "to": 8, "width": 8.65259782842244}, {"from": 2, "to": 8, "width": 8.638879709672837}, {"from": 11, "to": 0, "width": 8.620832226175724}, {"from": 3, "to": 4, "width": 8.619388703730907}, {"from": 6, "to": 3, "width": 8.581294116822761}, {"from": 5, "to": 21, "width": 8.576593534697684}, {"from": 2, "to": 19, "width": 8.57602797713713}, {"from": 0, "to": 15, "width": 8.565602330623925}, {"from": 7, "to": 19, "width": 8.560444233410552}, {"from": 12, "to": 0, "width": 8.556798446008598}, {"from": 7, "to": 8, "width": 8.554488976159934}, {"from": 5, "to": 7, "width": 8.494129251817686}, {"from": 13, "to": 19, "width": 8.486527777105353}, {"from": 14, "to": 19, "width": 8.486115235845377}, {"from": 2, "to": 4, "width": 8.451907724717607}, {"from": 2, "to": 23, "width": 8.42726848388825}, {"from": 2, "to": 15, "width": 8.416267272826277}, {"from": 1, "to": 11, "width": 8.40804774415544}, {"from": 1, "to": 15, "width": 8.400209835930418}, {"from": 5, "to": 14, "width": 8.379768515504566}, {"from": 3, "to": 12, "width": 8.379539026117442}, {"from": 2, "to": 27, "width": 8.372398606513004}, {"from": 3, "to": 16, "width": 8.354438940114811}, {"from": 1, "to": 13, "width": 8.351846738828245}, {"from": 1, "to": 3, "width": 8.339023005744759}, {"from": 0, "to": 21, "width": 8.330381569349418}, {"from": 1, "to": 10, "width": 8.313116702819253}, {"from": 14, "to": 8, "width": 8.30943074214033}, {"from": 1, "to": 14, "width": 8.27052509505507}, {"from": 5, "to": 19, "width": 8.265135629937385}, {"from": 5, "to": 27, "width": 8.248529124800218}, {"from": 0, "to": 23, "width": 8.246433786160365}, {"from": 30, "to": 0, "width": 8.23403420769204}, {"from": 6, "to": 12, "width": 8.229244416735913}, {"from": 1, "to": 27, "width": 8.226038429485484}, {"from": 6, "to": 16, "width": 8.220941168281389}, {"from": 20, "to": 0, "width": 8.193400231952097}, {"from": 13, "to": 5, "width": 8.180320874773685}, {"from": 6, "to": 10, "width": 8.172729104865471}, {"from": 6, "to": 17, "width": 8.17244681834278}, {"from": 1, "to": 4, "width": 8.166216268592143}, {"from": 1, "to": 19, "width": 8.16194579946869}, {"from": 13, "to": 2, "width": 8.153925132007862}, {"from": 1, "to": 17, "width": 8.142063283104147}, {"from": 0, "to": 27, "width": 8.122074375362217}, {"from": 3, "to": 33, "width": 8.09437844497296}, {"from": 3, "to": 17, "width": 8.09376775793108}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

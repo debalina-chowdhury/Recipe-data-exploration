@@ -1,3 +1,5 @@
+import os
+import json
 from datetime import datetime
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -76,3 +78,28 @@ def count_ingredients(df,name):
         y.append(sums/denom)
         year+=1
     return(y) 
+
+
+def save_dict_to_json(item, path, overwrite=True):
+    if os.path.exists(path) and overwrite is False:
+        print("{} already exists".format(path))
+    else:
+        try:
+            item = json.dumps(item, indent=4)
+            with open(path, "w", encoding='utf-8') as f:
+                f.write(item)
+                print("success write dict to json: {}".format(path))
+        except Exception as e:
+            print("write error==>", e)
+
+def read_dict_from_json(path):
+    try:
+        if os.path.exists(path):
+            with open(path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                print("{} successfully loaded!".format(path))
+                return data
+        else:
+            print("{} does not exist!".format(path))
+    except Exception as e:
+        print("read error==>", e)
