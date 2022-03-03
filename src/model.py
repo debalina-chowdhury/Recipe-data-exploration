@@ -105,7 +105,12 @@ print(emb2d.shape)
 plt.title("ingredient embedding in 2D")
 plt.scatter(emb2d[:,0],emb2d[:,1])
 
-for idx, ing in enumerate(list(index2food.values())[:20]):
+show_list = [0, 6, 20, 28]
+
+# for idx, ing in enumerate(list(index2food.values())[show_list]):
+
+for idx in show_list:
+    ing = index2food[str(idx)]
     plt.scatter(emb2d[int(idx), 0],emb2d[int(idx), 1], label=ing)
     plt.legend()
 

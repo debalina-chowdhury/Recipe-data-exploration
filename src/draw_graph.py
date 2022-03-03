@@ -36,13 +36,9 @@ def get_connection_weight(i, j):
 index2food = read_dict_from_json('data/h_index2food.json')
 # all_idx_list, all_food_list = list(index2food.keys()), list(index2food.values())
 all_connection_dict = read_dict_from_json('data/sorted_all_connection_dict.json')
-print('1')
 all_connection_list = list(all_connection_dict.keys())
-print('2')
-idx_connection_list = [string2tuple(pair) for pair in all_connection_list[:100]]
-print('3')
+idx_connection_list = [string2tuple(pair) for pair in all_connection_list[500:700]]
 idx_connection_list = [get_connection_weight(int(x1), int(x2)) for x1, x2 in idx_connection_list]
-print('4')
 # print(idx_connection_list)
 
 
@@ -63,13 +59,6 @@ import numpy as np
 net = Network(height="800px", width="1200px")
 net.add_nodes(all_idx_list, label=all_food_list)
 net.add_edges(idx_connection_list)
+net.show_buttons(filter_=['physics'])
 
-
-# net.add_nodes([1, 2], label=['Alex', 'Carthy'])
-# net.add_nodes([3, 4, 5, 6], 
-#               label=['Michael', 'Ben', 'Oliver', 'Olivia'],
-#               color=['#3da831', '#9a31a8', '#3155a8', '#eb4034'])
-
-# net.add_edge(1, 5)
-# net.add_edges([(2, 5, 10), (3, 4, 2), (1, 6), (2, 6), (3, 5)])
-net.show('edges_with_weights.html')
+net.show('food_connection.html')
