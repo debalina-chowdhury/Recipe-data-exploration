@@ -29,7 +29,7 @@ src
 ```
 
 ## Aim
-Exploration of recipe dataset and building a recommendation system based on insights found with the help of data visualization after data preprocessing
+Exploration of recipe dataset and finding insights with the help of data visualization after data preprocessing
 
 ## Problems to be addressed
 What are the most important factors that affect the ratings of a recipe?
@@ -45,7 +45,7 @@ https://www.kaggle.com/shuyangli94/food-com-recipes-and-user-interactions
 
 
 ## Proposed solution and real world application
-As a part of our data analysis, we have taken a look at what recipes are cooked most often within each month and have also analyzed how recipes have change over the years. We have found interesting facts such as the number of ingredients used per recipe has increased over the years and Gingerbread is most popular in December and Irish Soda bread is most popular in March. We also found other interesting information such as Kale having a significant increase in appearance after 2007 all the way to 2014. The complete report of our findings is within our slide. There we have include visuals for the sake of improving intuition of our data.
+As a part of our data analysis, we have taken a look at what recipes are cooked most often within each month and have also analyzed how recipes have changed over the years. We have found interesting facts such as the number of ingredients used per recipe has increased over the years and Gingerbread is most popular in December and Irish Soda bread is most popular in March. We also found other interesting information such as Kale having a significant increase in appearance after 2007 all the way to 2014. The complete report of our findings is within our presentation slides. There we have included visuals for the sake of improving intuition of our data.
 
 ## Most Common Words Used for Foods with Highest Rating
 
