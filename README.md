@@ -6,6 +6,16 @@ ECE 143 Winter 22 - Group 12 Project
 
 Requires python 3+
 
+Some main third-party modules:
+- numpy
+- pandas
+- pyvis
+- matplotlib
+- seaborn
+- torch
+- nltk
+- wordcloud
+
 Clone the repository using the following command
 ```
 git clone https://github.com/debalina-chowdhury/Recipe-data-exploration.git
