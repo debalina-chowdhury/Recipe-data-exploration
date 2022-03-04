@@ -55,7 +55,8 @@ As a part of our data analysis, we have taken a look at what recipes are cooked 
 ![plot](src/highest_rating_recipes_wordcloud.png)
 
 ## Ingredient Connection Visualization
-We visual the connections between some high frequency [ingredients](src/food_connection.html).
+We visual the connections between some high frequency ingredients.
+![ing](src/ingredient_connections.png)
 
 ## Ingredient Embedding Visualization
 
