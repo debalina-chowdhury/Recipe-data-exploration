@@ -38,7 +38,4 @@ As a part of our data analysis, we have taken a look at what recipes are cooked 
 # Most Common Words Used for Foods with Highest Rating
 
 ![plot](src/highest_rating_recipes_wordcloud.png)
-
-# Schedule:
-
-Deadline: 03/04/2022   
+  
