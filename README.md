@@ -16,6 +16,9 @@ Install dependencies
 pip install requirements.txt
 ```
 
+We implement the Node2Vec algorithm using [PyG](https://github.com/pyg-team/pytorch_geometric). Please refer to
+the [PyG documentation](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html) for information about installation.
+
 Download the [recipe dataset](https://www.kaggle.com/shuyangli94/food-com-recipes-and-user-interactions) to `src/data` directory, so that the structure looks like
 ```
 src
@@ -51,3 +54,9 @@ As a part of our data analysis, we have taken a look at what recipes are cooked 
 
 ![plot](src/highest_rating_recipes_wordcloud.png)
 
+## Ingredient Connection Visualization
+We visual the connections between some high frequency [ingredients](src/food_connection.html).
+
+## Ingredient Embedding Visualization
+
+![plot](src/ingredient_embedding_2d.png)
