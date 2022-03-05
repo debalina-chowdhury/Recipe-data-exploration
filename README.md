@@ -38,6 +38,7 @@ src
 │   └── ...
 ├── rating-trend.ipynb
 ├── rating_trend.py
+├── ingredient_embedding.ipynb
 └── ...
 ```
 
@@ -61,13 +62,14 @@ https://www.kaggle.com/shuyangli94/food-com-recipes-and-user-interactions
 As a part of our data analysis, we have taken a look at what recipes are cooked most often within each month and have also analyzed how recipes have changed over the years. We have found interesting facts such as the number of ingredients used per recipe has increased over the years and Gingerbread is most popular in December and Irish Soda bread is most popular in March. We also found other interesting information such as Kale having a significant increase in appearance after 2007 all the way to 2014. The complete report of our findings is within our presentation slides. There we have included visuals for the sake of improving intuition of our data.
 
 ## Most Common Words Used for Foods with Highest Rating
-
 ![plot](src/highest_rating_recipes_wordcloud.png)
 
 ## Ingredient Connection Visualization
+Please refer to the code in `src/ingredient_embedding.ipynb` for details. We use pyvis to get interactive visualization.
 We visual the connections between some high frequency ingredients.
 ![ing](src/ingredient_connections.png)
 
 ## Ingredient Embedding Visualization
+Please refer to the code in `src/ingredient_embedding.ipynb` for details.
 
 ![plot](src/ingredient_embedding_2d.png)
